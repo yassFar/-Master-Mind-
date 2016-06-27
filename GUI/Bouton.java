@@ -22,6 +22,8 @@ import javax.imageio.ImageIO;
 
 import javax.swing.JButton;
 
+import java.nio.file.*;
+
   
 
 public class Bouton extends JButton{
@@ -31,7 +33,7 @@ public class Bouton extends JButton{
   private Image img;
 
 
-  public Bouton(String str){
+  public Bouton(String str, Path filePath){
 
     super(str);
 
@@ -39,7 +41,7 @@ public class Bouton extends JButton{
 
     try {
 
-      img = ImageIO.read(new File("fondBouton.png"));
+      img = ImageIO.read(new File(filePath.toString()));
 
     } catch (IOException e) {
 
